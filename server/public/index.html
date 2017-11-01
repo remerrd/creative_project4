@@ -1,0 +1,51 @@
+
+<html>
+    <head>
+        <title>Directory</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+        <script src="javascript/app.js"></script>
+        <link href="stylesheets/style.css" type="text/css" rel="stylesheet">
+    </head>
+
+    <body>
+        <div class="jumbotron text-center">
+            <h1>Directory.com</h1>
+        </div>
+        <div class="container-fluid align-left">
+            <div class="row">
+                <div class="col-sm-3">
+                    <h3>Search/Add</h3>
+                    <p>Type in the boxes below to search. If person is not in the table, please add their info.</p>
+                    <form id="search_form">
+                        <p>Name:</p><input id="name_input" type="text" class="form-control"/>
+                        <p>Phone Number:</p><input id="number_input" type="text" class="form-control"/>
+                        <p>Email:</p><input id="email_input" type="text" class="form-control"/>
+                        <p></p><button id="add_button" type="button" class="btn btn-primary">Add</button>
+                    </form>
+                </div>
+
+                <div class="col-sm-9">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Phone Number</th>
+                                <th>Email</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Ryan Remer</td>
+                                <td>444-forget-it</td>
+                                <td>remerrd@byu.edu</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </body>
+
+</html>
