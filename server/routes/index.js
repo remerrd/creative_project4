@@ -8,9 +8,9 @@ router.get('/', function(req, res) {
 
 var directory = [
   {
-    name: "Ryan Remer",
+    name: "Example",
     number: "444-forget-it",
-    email: "ryandremer@gmail.com"
+    email: "example@gmail.com"
   }
 ];
 

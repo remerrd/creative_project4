@@ -32,6 +32,9 @@ function mainCtrl ($scope, directoryFetcher, $http) {
             number: $scope.Number,
             email: $scope.Email    
         };
+        $scope.directory += formData;
+        console.log(formData);
+        /*
         console.log(formData);
         var myUrl = 'directory';
         $http({
@@ -42,6 +45,6 @@ function mainCtrl ($scope, directoryFetcher, $http) {
            console.log("Post worked");
          }).error(function(data, status, headers, config) {
            console.log("Post failed");
-         });
+         });*/
     }
 }
