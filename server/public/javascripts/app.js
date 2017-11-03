@@ -22,9 +22,10 @@ function mainCtrl ($scope, directoryFetcher, $http) {
     $scope.directory = [];
 
     directoryFetcher.get()
-        .then(function(data) {
-            $scope.directory = data;
-        });
+    .then(function(data) {
+        $scope.directory = data;
+    });
+
 
     $scope.addToDirectory = function(){
         var formData = {
@@ -32,9 +33,10 @@ function mainCtrl ($scope, directoryFetcher, $http) {
             number: $scope.Number,
             email: $scope.Email    
         };
-        $scope.directory += formData;
+        $scope.directory.push(formData);
         console.log(formData);
-        /*
+
+        
         console.log(formData);
         var myUrl = 'directory';
         $http({
@@ -45,6 +47,12 @@ function mainCtrl ($scope, directoryFetcher, $http) {
            console.log("Post worked");
          }).error(function(data, status, headers, config) {
            console.log("Post failed");
-         });*/
+         });
     }
+
+
+    
+
+   
+        
 }
