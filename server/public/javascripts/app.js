@@ -38,8 +38,10 @@ function mainCtrl ($scope, directoryFetcher, $http) {
             url: myUrl,
             method: "POST",
             data: formData
-        }).success(function(data,status,headers, config){
-            console.log("POST SUCCESS!");
-        })
+         }).success(function(data, status, headers, config) {
+           console.log("Post worked");
+         }).error(function(data, status, headers, config) {
+           console.log("Post failed");
+         });
     }
 }
