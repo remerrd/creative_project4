@@ -1,51 +1,53 @@
 
 <html>
-    <head>
-        <title>Directory</title>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
-        <script src="javascript/app.js"></script>
-        <link href="stylesheets/style.css" type="text/css" rel="stylesheet">
-    </head>
-
-    <body>
-        <div class="jumbotron text-center">
-            <h1>Directory.com</h1>
-        </div>
-        <div class="container-fluid align-left">
-            <div class="row">
-                <div class="col-sm-3">
-                    <h3>Search/Add</h3>
-                    <p>Type in the boxes below to search. If person is not in the table, please add their info.</p>
-                    <form id="search_form" ng-sumbit="addToDirectory()">
-                            <p>Name:</p><input ng-model="Name" type="text" class="form-control"/>
-                            <p>Phone Number:</p><input ng-model="NUmber" type="text" class="form-control"/>
-                            <p>Email:</p><input ng-model="Email" type="text" class="form-control"/>
-                            <p></p> <input class="btn btn-primary" type="submit" value="Submit">
-                        </form>
-                </div>
-
-                <div class="col-sm-9">
-                    <table class="table">
-                        <thead>
-                            <tr>
-                                <th>Name</th>
-                                <th>Phone Number</th>
-                                <th>Email</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>Ryan Remer</td>
-                                <td>444-forget-it</td>
-                                <td>remerrd@byu.edu</td>
-                            </tr>
-                        </tbody>
-                    </table>
+        <head>
+            <title>Directory</title>
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+            <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+            <script src="javascripts/app.js"></script>
+            <link href="stylesheets/style.css" type="text/css" rel="stylesheet">
+        </head>
+    
+        <body>
+            <div class="jumbotron text-center">
+                <h1>Directory.com</h1>
+            </div>
+            <div id='app' ng-app='app' ng-controller="mainCtrl">
+                <div class="container-fluid align-left">
+                    <div class="row">
+                        <div class="col-sm-2">
+                            <h3>Search/Add</h3>
+                            <p>Type in the boxes below to search. If person is not in the table, please add their info.</p>
+                            <form id="search_form" ng-sumbit="addToDirectory()">
+                                <p>Name:</p><input ng-model="Name" type="text" class="form-control"/>
+                                <p>Phone Number:</p><input ng-model="NUmber" type="text" class="form-control"/>
+                                <p>Email:</p><input ng-model="Email" type="text" class="form-control"/>
+                                <p></p> <input class="btn btn-primary" type="submit" value="Submit">
+                            </form>
+                        </div>
+    
+                        <div class="col-sm-10">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>Names</th>
+                                        <th>Phone Numbers</th>
+                                        <th>Emails</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr ng-repeat="x in directory">
+                                        <td>{{x.name}}</td>
+                                        <td>{{x.number}}</td>
+                                        <td>{{x.email}}</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
-    </body>
-
-</html>
+        </body>
+    
+    </html>
