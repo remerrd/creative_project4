@@ -6,8 +6,17 @@ router.get('/', function(req, res) {
   res.sendFile('index.html', { root: 'public' });
 });
 
+var directory = [
+  {
+    name: "Ryan Remer",
+    number: "444-forget-it",
+    email: "ryandremer@gmail.com"
+  }
+];
+
 router.get('/directory',function(req, res) {
   console.log("In directory");
+  res.send(directory);
 });
 
 module.exports = router;

@@ -13,36 +13,38 @@
         <div class="jumbotron text-center">
             <h1>Directory.com</h1>
         </div>
-        <div class="container-fluid align-left">
-            <div class="row">
-                <div class="col-sm-2">
-                    <h3>Search/Add</h3>
-                    <p>Type in the boxes below to search. If person is not in the table, please add their info.</p>
-                    <form id="search_form">
-                        <p>Name:</p><input id="name_input" type="text" class="form-control"/>
-                        <p>Phone Number:</p><input id="number_input" type="text" class="form-control"/>
-                        <p>Email:</p><input id="email_input" type="text" class="form-control"/>
-                        <p></p><button id="add_button" type="button" class="btn btn-primary">Add</button>
-                    </form>
-                </div>
+        <div id='app' ng-app='app' ng-controller="mainCtrl">
+            <div class="container-fluid align-left">
+                <div class="row">
+                    <div class="col-sm-2">
+                        <h3>Search/Add</h3>
+                        <p>Type in the boxes below to search. If person is not in the table, please add their info.</p>
+                        <form id="search_form">
+                            <p>Name:</p><input id="name_input" type="text" class="form-control"/>
+                            <p>Phone Number:</p><input id="number_input" type="text" class="form-control"/>
+                            <p>Email:</p><input id="email_input" type="text" class="form-control"/>
+                            <p></p><button id="add_button" type="button" class="btn btn-primary">Add</button>
+                        </form>
+                    </div>
 
-                <div class="col-sm-10">
-                    <table class="table">
-                        <thead>
-                            <tr>
-                                <th>Name</th>
-                                <th>Phone Number</th>
-                                <th>Email</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>Ryan Remer</td>
-                                <td>444-forget-it</td>
-                                <td>remerrd@byu.edu</td>
-                            </tr>
-                        </tbody>
-                    </table>
+                    <div class="col-sm-10">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Phone Number</th>
+                                    <th>Email</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr ng-repeat="x in directory">
+                                    <td>{{x.name}}</td>
+                                    <td>{{x.number}}</td>
+                                    <td>{{x.email}}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             </div>
         </div>
