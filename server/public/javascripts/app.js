@@ -1,3 +1,8 @@
+var app = window.angular.module('app', [])
+
+app.factory('directoryFetcher', directoryFetcher)
+app.controller('mainCtrl', mainCtrl)
+
 function directoryFetcher ($http) {
 
     var API_ROOT = 'directory';
