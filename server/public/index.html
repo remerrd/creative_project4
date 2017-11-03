@@ -18,12 +18,12 @@
                 <div class="col-sm-3">
                     <h3>Search/Add</h3>
                     <p>Type in the boxes below to search. If person is not in the table, please add their info.</p>
-                    <form id="search_form">
-                        <p>Name:</p><input id="name_input" type="text" class="form-control"/>
-                        <p>Phone Number:</p><input id="number_input" type="text" class="form-control"/>
-                        <p>Email:</p><input id="email_input" type="text" class="form-control"/>
-                        <p></p><input class="btn btn-primary" type="submit" value="Submit">
-                    </form>
+                    <form id="search_form" ng-sumbit="addToDirectory()">
+                            <p>Name:</p><input ng-model="Name" type="text" class="form-control"/>
+                            <p>Phone Number:</p><input ng-model="NUmber" type="text" class="form-control"/>
+                            <p>Email:</p><input ng-model="Email" type="text" class="form-control"/>
+                            <p></p> <input class="btn btn-primary" type="submit" value="Submit">
+                        </form>
                 </div>
 
                 <div class="col-sm-9">
