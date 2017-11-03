@@ -12,7 +12,7 @@ function directoryFetcher ($http) {
     }
 }
 
-function mainCtrl ($scope, directoryFetcher) {
+function mainCtrl ($scope, directoryFetcher, $http) {
 
     $scope.directory = [];
 
@@ -21,9 +21,20 @@ function mainCtrl ($scope, directoryFetcher) {
             $scope.directory = data;
         });
 
-    directoryFetcher.tryit()
-        .then(function (data){
-            console.log("try directory");
-            console.log(data);
+    $scope.addToDirectory = function(){
+        var formData = {
+            name: $scope.Name,
+            number: $scope.Number,
+            email: $scope.Email    
+        };
+        console.log(formData);
+        var myUrl = 'directory';
+        $http({
+            url: myUrl,
+            method: "POST",
+            data: formData
+        }).success(function(data,status,headers, config){
+            console.log("POST SUCCESS!");
         })
+    }
 }

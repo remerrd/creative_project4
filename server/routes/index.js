@@ -19,4 +19,11 @@ router.get('/directory',function(req, res) {
   res.send(directory);
 });
 
+router.post('/directory',function(req,res){
+  console.log("In directory post");
+  console.log(req.body);
+  directory.push(req.body);
+  res.end('{"success" : "Updated Successfully", "status" : 200}');
+})
+
 module.exports = router;
