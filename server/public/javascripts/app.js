@@ -26,6 +26,30 @@ function mainCtrl ($scope, directoryFetcher, $http) {
         $scope.directory = data;
     });
 
+    $scope.removeFromDirectory = function(obj){
+
+        console.log("splicing");
+
+        for (let i = 0; i < $scope.directory.length;i++){
+            console.log($scope.directory[i]["name"]);
+            console.log(obj);
+            if ($scope.directory[i]["name"] == obj.target.innerText){
+                $scope.directory.splice(i,1);
+                console.log("spliced");
+            }
+        }
+        myUrl = "rmdirectory"
+        $http({
+            url: myUrl,
+            method: "POST",
+            data: obj.target.innerText
+         }).success(function(data, status, headers, config) {
+           console.log("Deletion worked");
+         }).error(function(data, status, headers, config) {
+           console.log("Deletion failed");
+         });
+
+    }
 
     $scope.addToDirectory = function(){
         var formData = {
@@ -33,6 +57,9 @@ function mainCtrl ($scope, directoryFetcher, $http) {
             number: $scope.Number,
             email: $scope.Email    
         };
+        $scope.Name = "";
+        $scope.Number = "";
+        $scope.Email = "";
         $scope.directory.push(formData);
         console.log(formData);
 

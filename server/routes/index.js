@@ -26,4 +26,16 @@ router.post('/directory',function(req,res){
   res.end('{"success" : "Updated Successfully", "status" : 200}');
 })
 
+router.post('/rmdirectory',function(req,res){
+  console.log("In directory remove");
+  console.log(req.body);
+  
+  for (let i = 0; i < directory.length;i++){
+    console.log(directory[i]["name"]);
+    if (directory[i]["name"] == req){
+        directory.splice(i,1);
+    }
+}
+})
+
 module.exports = router;
