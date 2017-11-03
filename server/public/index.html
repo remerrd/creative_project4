@@ -13,21 +13,20 @@
             <div class="jumbotron text-center">
                 <h1>Directory.com</h1>
             </div>
-            <div id='app' ng-app='app' ng-controller="mainCtrl">
-                <div class="container-fluid align-left">
+                <div class="container-fluid align-left" id='app' ng-app='app' ng-controller="mainCtrl">
                     <div class="row">
-                        <div class="col-sm-2">
+                        <div class="col-sm-3">
                             <h3>Search/Add</h3>
                             <p>Type in the boxes below to search. If person is not in the table, please add their info.</p>
                             <form ng-sumbit="addToDirectory()" ng-controller="mainCtrl">
-                                <p>Name:</p><input ng-model="Name" type="text" class="form-control"/>
-                                <p>Phone Number:</p><input ng-model="Number" type="text" class="form-control"/>
-                                <p>Email:</p><input ng-model="Email" type="text" class="form-control"/>
+                                <p>Name: {{Name}}</p><input ng-model="Name" type="text" class="form-control"/>
+                                <p>Phone Number: {{Numer}} </p><input ng-model="Number" type="text" class="form-control"/>
+                                <p>Email: {{Email}}</p><input ng-model="Email" type="text" class="form-control"/>
                                 <p></p> <input class="btn btn-primary" type="submit" value="Submit">
                             </form>
                         </div>
     
-                        <div class="col-sm-10">
+                        <div class="col-sm-9">
                             <table class="table">
                                 <thead>
                                     <tr>
@@ -47,7 +46,6 @@
                         </div>
                     </div>
                 </div>
-            </div>
         </body>
     
     </html>
