@@ -26,27 +26,6 @@ function mainCtrl ($scope, directoryFetcher, $http) {
         $scope.directory = data;
     });
 
-    $scope.removeFromDirectory = function(obj){
-
-        console.log("splicing");
-
-        for (let i = 0; i < $scope.directory.length;i++){
-            console.log($scope.directory[i]["name"]);
-            console.log(obj);
-            if ($scope.directory[i]["name"] == obj.target.innerText){
-                $scope.directory.splice(i,1);
-                console.log("spliced");
-            }
-        }
-        myUrl = "rmdirectory"
-        $http({
-            url: myUrl,
-            method: "POST",
-            data: obj.target.innerText
-         });
-
-    }
-
     $scope.addToDirectory = function(){
         var formData = {
             name: $scope.Name,
