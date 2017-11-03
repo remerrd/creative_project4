@@ -32,7 +32,7 @@ router.post('/rmdirectory',function(req,res){
   
   for (let i = 0; i < directory.length;i++){
     console.log(directory[i]["name"]);
-    if (directory[i]["name"] == req){
+    if (directory[i]["name"] == req.body){
         directory.splice(i,1);
     }
 }

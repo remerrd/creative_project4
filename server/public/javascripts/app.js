@@ -43,10 +43,6 @@ function mainCtrl ($scope, directoryFetcher, $http) {
             url: myUrl,
             method: "POST",
             data: obj.target.innerText
-         }).success(function(data, status, headers, config) {
-           console.log("Deletion worked");
-         }).error(function(data, status, headers, config) {
-           console.log("Deletion failed");
          });
 
     }
